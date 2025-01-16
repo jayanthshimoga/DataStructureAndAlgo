@@ -1,0 +1,15 @@
+name: Release Version
+on:
+    push:
+        tags:
+            - 'v*'
+
+env:
+    docker: artifactory
+jobs:
+    build-release:
+        name: Build Image
+        runs-on: [ubuntu-standard]
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
